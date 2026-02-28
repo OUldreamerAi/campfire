@@ -44,3 +44,4 @@ func spawn_fish():
 
 	fish.position = Vector2(spawn_x, y)
 	add_child(fish)
+	fish.get_node("AnimatedSprite2D").play("swim")

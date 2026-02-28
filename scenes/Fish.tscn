@@ -49,7 +49,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_38rrr")
 }],
 "loop": true,
-"name": &"default",
+"name": &"swim",
 "speed": 5.0
 }]
 
@@ -62,8 +62,9 @@ script = ExtResource("1_431eu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1167895260]
 sprite_frames = SubResource("SpriteFrames_cwt5k")
-frame = 1
-frame_progress = 0.41877645
+animation = &"swim"
+frame_progress = 0.01691011
+speed_scale = 2.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D" unique_id=2069812257]
 position = Vector2(-2.0000002, 1.4901161e-08)
