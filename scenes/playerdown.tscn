@@ -55,13 +55,16 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="playerup" type="CharacterBody2D" unique_id=104827442]
+[node name="playerdown" type="CharacterBody2D" unique_id=104827442]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1743718558]
 position = Vector2(23, 38.5)
 shape = SubResource("RectangleShape2D_ubv1w")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1926518384]
+modulate = Color(0, 0, 0, 1)
 position = Vector2(26.000002, 35)
 scale = Vector2(2.7321427, 2.5982144)
 sprite_frames = SubResource("SpriteFrames_ubv1w")
+flip_h = true
+flip_v = true

@@ -56,7 +56,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1845401085]
+[node name="playerup" type="CharacterBody2D" unique_id=1845401085]
 script = ExtResource("1_g2els")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=97345625]
@@ -67,4 +67,4 @@ shape = SubResource("RectangleShape2D_u8vuu")
 position = Vector2(26.000002, 35)
 scale = Vector2(2.7321427, 2.5982144)
 sprite_frames = SubResource("SpriteFrames_jq456")
-frame_progress = 0.1422322
+frame_progress = 0.76461786
