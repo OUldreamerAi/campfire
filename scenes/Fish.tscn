@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://b1kqhr7lj2yhe"]
 
+[ext_resource type="Script" uid="uid://bjlhny3b1ycbi" path="res://scenes/fish.gd" id="1_431eu"]
 [ext_resource type="Texture2D" uid="uid://4u3oyfqy1vwg" path="res://Fish/Merged_image_1_-removebg-preview.png" id="1_psuch"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_psuch"]
@@ -52,7 +53,19 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_psuch"]
+radius = 5.9081326
+height = 24.082403
+
 [node name="Fish" type="Node2D" unique_id=2132375483]
+script = ExtResource("1_431eu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1167895260]
 sprite_frames = SubResource("SpriteFrames_cwt5k")
+frame = 1
+frame_progress = 0.41877645
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D" unique_id=2069812257]
+position = Vector2(-2.0000002, 1.4901161e-08)
+rotation = -1.6458455
+shape = SubResource("CapsuleShape2D_psuch")

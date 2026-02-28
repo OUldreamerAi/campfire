@@ -2,6 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://ckmxfs1axheih" path="res://scenes/player.tscn" id="1_m47ar"]
 [ext_resource type="PackedScene" uid="uid://d2m8l307fd2em" path="res://scenes/backgroungimage.tscn" id="2_54scn"]
+[ext_resource type="Script" uid="uid://cm0sha4t2j0rp" path="res://scenes/fishspawner.gd" id="3_yfrnb"]
+[ext_resource type="PackedScene" uid="uid://b1kqhr7lj2yhe" path="res://scenes/Fish.tscn" id="4_8pk5p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m47ar"]
 size = Vector2(1296, 20)
@@ -19,3 +21,7 @@ position = Vector2(-389, 209)
 
 [node name="BackgroungImage" parent="." unique_id=58090044 instance=ExtResource("2_54scn")]
 position = Vector2(-170, 11)
+
+[node name="Fishspawner" type="Node2D" parent="." unique_id=353462021]
+script = ExtResource("3_yfrnb")
+fish_scene = ExtResource("4_8pk5p")
