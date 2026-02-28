@@ -1,24 +1,26 @@
 extends CharacterBody2D
+
 @onready var sprite = $AnimatedSprite2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
+
 func _physics_process(delta: float) -> void:
-	# Add the gravity.s
+	# Add the gravity (inverted - pulls upward).
 	if not is_on_ceiling():
 		velocity -= get_gravity() * delta
 	
-	# Handle jump (same as upper player).
+	# Handle jump - only jump if THIS player is on ceiling AND upper player is on floor.
 	if Input.is_action_just_pressed("ui_accept") and is_on_ceiling():
-		velocity.y =velocity.y - JUMP_VELOCITY
+		velocity.y = -JUMP_VELOCITY
 	
-	# Get the input direction but REVERSE it (mirror horizontally).
+	# Get the input direction and REVERSE it (mirror horizontally). 
 	var direction := Input.get_axis("ui_left", "ui_right")
 	
 	if direction:
 		velocity.x = direction * SPEED
-		sprite.play("default") # Play walk animation
-		sprite.flip_h = direction < 0 # Flip sprite left/right
+		sprite.play("default")
+		sprite.flip_h = direction < 0
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	

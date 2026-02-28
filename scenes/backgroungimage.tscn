@@ -1,3 +1,8 @@
 [gd_scene format=3 uid="uid://d2m8l307fd2em"]
 
+[ext_resource type="Script" uid="uid://ct5gs10k7yftn" path="res://scripts/clouds.gd" id="1_gpxsf"]
+
 [node name="BackgroungImage" type="Node2D" unique_id=58090044]
+
+[node name="clouds" type="Node2D" parent="." unique_id=1118403828]
+script = ExtResource("1_gpxsf")

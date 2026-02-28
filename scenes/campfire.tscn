@@ -18,4 +18,4 @@ shape = SubResource("RectangleShape2D_m47ar")
 position = Vector2(-389, 209)
 
 [node name="BackgroungImage" parent="." unique_id=58090044 instance=ExtResource("2_54scn")]
-position = Vector2(198, 232)
+position = Vector2(-170, 11)
