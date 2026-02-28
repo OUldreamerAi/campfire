@@ -21,6 +21,8 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * SPEED
 		sprite.play("default") # Play walk animation
 		sprite.flip_h = direction < 0 # Flip sprite left/right
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 
 
