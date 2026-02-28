@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ckmxfs1axheih" path="res://scenes/player.tscn" id="1_m47ar"]
 [ext_resource type="PackedScene" uid="uid://d2m8l307fd2em" path="res://scenes/backgroungimage.tscn" id="2_54scn"]
+[ext_resource type="PackedScene" uid="uid://cxloq8cfiuam8" path="res://scenes/deadline.tscn" id="3_yfrnb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m47ar"]
 size = Vector2(1296, 20)
@@ -19,3 +20,6 @@ position = Vector2(-389, 209)
 
 [node name="BackgroungImage" parent="." unique_id=58090044 instance=ExtResource("2_54scn")]
 position = Vector2(-170, 11)
+
+[node name="Deadline" parent="." unique_id=2109944049 instance=ExtResource("3_yfrnb")]
+position = Vector2(57, 161)
