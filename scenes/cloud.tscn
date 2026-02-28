@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dau8yer2roefq"]
+
+[ext_resource type="Script" uid="uid://3dnl4d7kisdf" path="res://cloud.gd" id="1_vlwrh"]
+[ext_resource type="Texture2D" uid="uid://d4mioyh2tt3gn" path="res://art/pixil-frame-0 (1).png" id="2_2kyfr"]
+
+[node name="cloud" type="Node2D" unique_id=1661940848]
+script = ExtResource("1_vlwrh")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1113597541]
+texture = ExtResource("2_2kyfr")

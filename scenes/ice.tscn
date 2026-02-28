@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://1v78lhdti01a"]
+
+[ext_resource type="Script" uid="uid://bj3lbhqephjow" path="res://scripts/ice.gd" id="1_hdoyw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k7y80"]
+size = Vector2(72, 300)
+
+[node name="Ice" type="Node2D" unique_id=2048730378 node_paths=PackedStringArray("expandFloorArea")]
+script = ExtResource("1_hdoyw")
+expandFloorArea = NodePath("AreaToAddFloor")
+
+[node name="AreaToAddFloor" type="Area2D" parent="." unique_id=1200311787]
+position = Vector2(1028, 410)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaToAddFloor" unique_id=421417781]
+position = Vector2(-24, -260)
+shape = SubResource("RectangleShape2D_k7y80")
+
+[connection signal="body_entered" from="AreaToAddFloor" to="." method="_on_area_to_add_floor_body_entered"]
+[connection signal="body_exited" from="AreaToAddFloor" to="." method="_on_area_to_add_floor_body_exited"]
