@@ -6,6 +6,70 @@
 atlas = ExtResource("1_psuch")
 region = Rect2(0, 0, 48, 48)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_2xxte"]
+atlas = ExtResource("1_psuch")
+region = Rect2(0, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_22x8n"]
+atlas = ExtResource("1_psuch")
+region = Rect2(0, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_38rrr"]
+atlas = ExtResource("1_psuch")
+region = Rect2(0, 192, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cwt5k"]
+atlas = ExtResource("1_psuch")
+region = Rect2(0, 240, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_02ob7"]
+atlas = ExtResource("1_psuch")
+region = Rect2(0, 48, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n3qfj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_431eu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2xxte")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_22x8n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_38rrr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cwt5k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_02ob7")
+}],
+"loop": true,
+"name": &"base",
+"speed": 5.0
+}]
+
+[node name="Fish" type="Node2D" unique_id=741297385]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2134937002]
+position = Vector2(0, 1)
+scale = Vector2(-0.98497725, 0.66699666)
+sprite_frames = SubResource("SpriteFrames_n3qfj")
+animation = &"base"
+frame_progress = 0.42184994
+offset = Vector2(1, 10)
+
+[gd_scene format=3 uid="uid://b1kqhr7lj2yhe"]
+
+[ext_resource type="Texture2D" uid="uid://4u3oyfqy1vwg" path="res://Fish/Merged_image_1_-removebg-preview.png" id="1_psuch"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_431eu"]
+atlas = ExtResource("1_psuch")
+region = Rect2(0, 0, 48, 48)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_02ob7"]
 atlas = ExtResource("1_psuch")
 region = Rect2(0, 48, 48, 48)
