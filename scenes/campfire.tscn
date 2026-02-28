@@ -1,16 +1,17 @@
 [gd_scene format=3 uid="uid://dw0nknaptj21s"]
 
-[ext_resource type="PackedScene" uid="uid://ccoaqdioidrv7" path="res://scenes/player.tscn" id="1_m47ar"]
+[ext_resource type="PackedScene" uid="uid://ckmxfs1axheih" path="res://scenes/player.tscn" id="1_m47ar"]
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_a0l5k"]
-distance = -331.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m47ar"]
+size = Vector2(1296, 20)
 
 [node name="campfire" type="Node2D" unique_id=1097842133]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=268977843]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=108845540]
-shape = SubResource("WorldBoundaryShape2D_a0l5k")
+position = Vector2(179, 329)
+shape = SubResource("RectangleShape2D_m47ar")
 
-[node name="CharacterBody2D" parent="StaticBody2D" unique_id=1845401085 instance=ExtResource("1_m47ar")]
-position = Vector2(83, 184)
+[node name="player" parent="." unique_id=1265036037 instance=ExtResource("1_m47ar")]
+position = Vector2(-389, 209)
