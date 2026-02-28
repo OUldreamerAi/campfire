@@ -4,7 +4,7 @@ extends Node2D
 @export var iceSceneAlt: PackedScene
 @export var floorY: = 360
 @export var startBlocks = 30
-@export var holeFreq: = 5
+@export var holeFreq: = 3
 
 var lastSpawnX: int =  35
 var blockWidth = 70
@@ -31,7 +31,7 @@ func spawnBlock():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 		
 
