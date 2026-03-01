@@ -2,9 +2,13 @@ extends Node2D
 
 @export var iceScene: PackedScene
 @export var iceSceneAlt: PackedScene
+@export var spikeScene: PackedScene
+
 @export var floorY: = 360
+@export var spikeFreq = 4
+@export var spikeOffsetY = 75
 @export var startBlocks = 30
-@export var holeFreq: = 3
+@export var holeFreq: = 5
 
 var lastSpawnX: int =  35
 var blockWidth = 70
@@ -19,10 +23,14 @@ func _ready() -> void:
 func spawnBlock():
 	var block = iceScene.instantiate()
 	var blockAlt = iceSceneAlt.instantiate()
+	var spike = spikeScene.instantiate()
 	
 	if randi_range(0, 1) == 1:
 		block.position = Vector2(lastSpawnX, floorY)
 		add_child(block)
+		for i in randi_range(1,spikeFreq):
+			spike.position = Vector2(lastSpawnX, floorY + spikeOffsetY)
+			add_child(spike)
 	else:
 		blockAlt.position = Vector2(lastSpawnX, floorY)
 		add_child(blockAlt)
@@ -38,24 +46,21 @@ func _process(_delta: float) -> void:
 func _on_area_to_add_floor_body_entered(body: Node2D) -> void:
 	call_deferred("_expand_floor")
 
+var consecutiveHoles = 0
+
+
+
 func _expand_floor():
 	expandFloorArea.position += Vector2(700, 0)
 
-	var hole_remaining = 0
+
 
 	for i in range(10):
-
-		if hole_remaining > 0:
+		if randi_range(1, holeFreq) == 1 and consecutiveHoles < 4:
 			lastSpawnX += blockWidth
-			hole_remaining -= 1
-			continue
-
-		if randi_range(1, holeFreq) == holeFreq:
-			hole_remaining = randi_range(1, 2)
-			lastSpawnX += blockWidth
-			hole_remaining -= 1
-			continue
-
-		spawnBlock()
+			consecutiveHoles += 1
+		else:
+			spawnBlock()
+			consecutiveHoles = 0
 	
 		

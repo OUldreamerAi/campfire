@@ -57,6 +57,7 @@ animations = [{
 }]
 
 [node name="playerup" type="CharacterBody2D" unique_id=1845401085]
+collision_layer = 3
 script = ExtResource("1_arw05")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=97345625]

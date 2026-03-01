@@ -4,8 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://d2m8l307fd2em" path="res://scenes/backgroungimage.tscn" id="2_54scn"]
 [ext_resource type="PackedScene" uid="uid://cxloq8cfiuam8" path="res://scenes/deadline.tscn" id="3_yfrnb"]
 [ext_resource type="PackedScene" uid="uid://1v78lhdti01a" path="res://scenes/ice.tscn" id="4_1v5ef"]
-[ext_resource type="PackedScene" uid="uid://dbhcghksbporm" path="res://assets/iceblock.tscn" id="5_63vhv"]
-[ext_resource type="PackedScene" uid="uid://8gvn0o42xvm4" path="res://assets/iceblockalt.tscn" id="6_w2pjx"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_1v5ef"]
 
@@ -19,10 +17,9 @@ position = Vector2(-170, 11)
 
 [node name="Deadline" parent="." unique_id=2109944049 instance=ExtResource("3_yfrnb")]
 position = Vector2(57, 250)
+collision_mask = 2
 
 [node name="Ice" parent="." unique_id=2048730378 instance=ExtResource("4_1v5ef")]
-iceScene = ExtResource("5_63vhv")
-iceSceneAlt = ExtResource("6_w2pjx")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1586246890]
 position = Vector2(0, 360)
