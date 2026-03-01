@@ -3,8 +3,8 @@ extends Node2D
 @export var player: Node2D 
 @export var spawn_offset_x: float = 600
 @export var fish_scene: PackedScene
-@export var min_y: float = 370
-@export var max_y: float = 400
+@export var min_y: float = 500
+@export var max_y: float = 600
 
 # Random spawn interval range
 @export var min_spawn_interval: float = 2.0

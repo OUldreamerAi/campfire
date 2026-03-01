@@ -61,14 +61,14 @@ height = 24.082403
 script = ExtResource("1_431eu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1167895260]
-position = Vector2(-4, 3)
-scale = Vector2(1.1666666, 1.125)
+position = Vector2(3.8146973e-06, 1.0000057)
+scale = Vector2(2.2916665, 2.4375)
 sprite_frames = SubResource("SpriteFrames_cwt5k")
 animation = &"swim"
 frame_progress = 0.37733772
 speed_scale = 2.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D" unique_id=2069812257]
-position = Vector2(-2.0000002, 1.4901161e-08)
+position = Vector2(-3.0545464, 0.6153846)
 rotation = -1.6458455
 shape = SubResource("CapsuleShape2D_psuch")
