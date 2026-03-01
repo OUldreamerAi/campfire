@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bj3lbhqephjow" path="res://scripts/ice.gd" id="1_hdoyw"]
 [ext_resource type="PackedScene" uid="uid://dbhcghksbporm" path="res://assets/iceblock.tscn" id="2_hdoyw"]
 [ext_resource type="PackedScene" uid="uid://8gvn0o42xvm4" path="res://assets/iceblockalt.tscn" id="3_co5bh"]
-[ext_resource type="PackedScene" uid="uid://cm7eafwlhbqm6" path="res://scripts/spike.tscn" id="4_k7y80"]
+[ext_resource type="PackedScene" uid="uid://cm7eafwlhbqm6" path="res://scenes/spike.tscn" id="4_k7y80"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k7y80"]
 size = Vector2(72, 300)

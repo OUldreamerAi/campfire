@@ -23,12 +23,13 @@ func _ready() -> void:
 func spawnBlock():
 	var block = iceScene.instantiate()
 	var blockAlt = iceSceneAlt.instantiate()
-	var spike = spikeScene.instantiate()
+
 	
 	if randi_range(0, 1) == 1:
 		block.position = Vector2(lastSpawnX, floorY)
 		add_child(block)
 		for i in randi_range(1,spikeFreq):
+			var spike = spikeScene.instantiate()
 			spike.position = Vector2(lastSpawnX, floorY + spikeOffsetY)
 			add_child(spike)
 	else:

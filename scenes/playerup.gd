@@ -8,7 +8,7 @@ const JUMP_VELOCITY = -400.0
 @export var playerPosition: Vector2
 
 func _ready() -> void:
-	print(sprite)
+	pass
 
 
 func _process(delta: float) -> void:
