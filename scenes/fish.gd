@@ -17,3 +17,8 @@ func _process(delta):
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	alive = false
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area.name == "Area2D22":
+		get_tree().call_deferred("change_scene_to_file", "res://scenes/restart_sreen.tscn")
