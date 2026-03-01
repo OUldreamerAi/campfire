@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://8gvn0o42xvm4"]
+
+[ext_resource type="Texture2D" uid="uid://gevme2ie6y2j" path="res://art/iceBlockHalfAlt.png" id="1_o672i"]
+[ext_resource type="Script" uid="uid://68sqxevxqa0y" path="res://assets/iceblockdrop.gd" id="2_5pkp0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_co5bh"]
+size = Vector2(70, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3uvwl"]
+size = Vector2(70, 42)
+
+[node name="iceblockalt" type="Sprite2D" unique_id=402466031]
+texture = ExtResource("1_o672i")
+script = ExtResource("2_5pkp0")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=264754544]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=2050952831]
+position = Vector2(0, -15)
+shape = SubResource("RectangleShape2D_co5bh")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2099383816]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" unique_id=1995569355]
+position = Vector2(0, -16)
+shape = SubResource("RectangleShape2D_3uvwl")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
