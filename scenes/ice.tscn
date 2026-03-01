@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://1v78lhdti01a"]
+
+[ext_resource type="Script" uid="uid://bj3lbhqephjow" path="res://scripts/ice.gd" id="1_hdoyw"]
+[ext_resource type="PackedScene" uid="uid://dbhcghksbporm" path="res://assets/iceblock.tscn" id="2_hdoyw"]
+[ext_resource type="PackedScene" uid="uid://8gvn0o42xvm4" path="res://assets/iceblockalt.tscn" id="3_co5bh"]
+[ext_resource type="PackedScene" uid="uid://cm7eafwlhbqm6" path="res://scenes/spike.tscn" id="4_k7y80"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k7y80"]
+size = Vector2(72, 300)
+
+[node name="Ice" type="Node2D" unique_id=2048730378 node_paths=PackedStringArray("expandFloorArea")]
+script = ExtResource("1_hdoyw")
+iceScene = ExtResource("2_hdoyw")
+iceSceneAlt = ExtResource("3_co5bh")
+spikeScene = ExtResource("4_k7y80")
+expandFloorArea = NodePath("AreaToAddFloor")
+
+[node name="AreaToAddFloor" type="Area2D" parent="." unique_id=1200311787]
+position = Vector2(1028, 410)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaToAddFloor" unique_id=421417781]
+position = Vector2(-24, -260)
+shape = SubResource("RectangleShape2D_k7y80")
+
+[connection signal="body_entered" from="AreaToAddFloor" to="." method="_on_area_to_add_floor_body_entered"]
+[connection signal="body_exited" from="AreaToAddFloor" to="." method="_on_area_to_add_floor_body_exited"]

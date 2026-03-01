@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://d3bi2sex36rmq"]
+
+[ext_resource type="Script" uid="uid://tkpvnc7p2gvo" path="res://scripts/restart_sreen.gd" id="1_ragsp"]
+[ext_resource type="Texture2D" uid="uid://d5yhsxd8a5uw" path="res://art/animations/walk/east/frame_000.png" id="2_1lvun"]
+[ext_resource type="Script" uid="uid://bexp3oi7xo285" path="res://scenes/label.gd" id="3_tm22r"]
+
+[sub_resource type="Gradient" id="Gradient_tvpjc"]
+offsets = PackedFloat32Array(0.009036144, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.101960786, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ragsp"]
+gradient = SubResource("Gradient_tvpjc")
+
+[sub_resource type="Gradient" id="Gradient_aabv2"]
+offsets = PackedFloat32Array(0.6987952, 1)
+colors = PackedColorArray(0, 0, 0.8117647, 1, 0, 0.72156864, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_1lvun"]
+gradient = SubResource("Gradient_aabv2")
+
+[node name="RestartSreen" type="Control" unique_id=1654599703]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ragsp")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1031250287]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -131.0
+offset_top = -63.0
+offset_right = 136.0
+offset_bottom = 138.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer" unique_id=2020100953]
+layout_mode = 2
+theme_override_font_sizes/font_size = 43
+text = "ygygyugy"
+horizontal_alignment = 1
+script = ExtResource("3_tm22r")
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1770554945]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+text = "RESTART"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer" unique_id=669993252]
+layout_mode = 2
+theme_override_constants/separation = 27
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=569891726]
+custom_minimum_size = Vector2(0, 191.36)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.32972288, 0.5349742, 1, 1)
+icon = ExtResource("2_1lvun")
+icon_alignment = 1
+expand_icon = true
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=196804213]
+layer = -1
+follow_viewport_enabled = true
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer2" unique_id=1808833514]
+offset_left = -1535.4465
+offset_top = 658.62604
+offset_right = -571.0369
+offset_bottom = 1986.4265
+rotation = -1.5736555
+scale = Vector2(1.0417567, 130.6521)
+texture = SubResource("GradientTexture1D_ragsp")
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer2" unique_id=2076032301]
+offset_left = -1567.4424
+offset_top = 1679.8477
+offset_right = -240.8739
+offset_bottom = 3024.8833
+rotation = -1.5736555
+scale = Vector2(1, 130.16881)
+texture = SubResource("GradientTexture1D_1lvun")
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]

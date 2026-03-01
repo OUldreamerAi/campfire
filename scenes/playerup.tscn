@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://ccoaqdioidrv7"]
+
+[ext_resource type="Script" uid="uid://dbthwsh1t83sh" path="res://scenes/playerup.gd" id="1_arw05"]
+[ext_resource type="Texture2D" uid="uid://k0bh3sbakmmv" path="res://art/animations/walk/frame_004.png" id="2_arw05"]
+[ext_resource type="Script" uid="uid://8cwekdtspkc2" path="res://scenes/playerupdata.gd" id="3_f0r7w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u8vuu"]
+size = Vector2(66, 97)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_arw05"]
+atlas = ExtResource("2_arw05")
+region = Rect2(0, 0, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jq456"]
+atlas = ExtResource("2_arw05")
+region = Rect2(0, 56, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j8ku3"]
+atlas = ExtResource("2_arw05")
+region = Rect2(0, 112, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_emdck"]
+atlas = ExtResource("2_arw05")
+region = Rect2(0, 168, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5h7qj"]
+atlas = ExtResource("2_arw05")
+region = Rect2(0, 224, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_12c4g"]
+atlas = ExtResource("2_arw05")
+region = Rect2(0, 280, 56, 56)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_47eot"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_arw05")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jq456")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j8ku3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_emdck")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5h7qj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_12c4g")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="playerup" type="CharacterBody2D" unique_id=1845401085]
+collision_layer = 3
+script = ExtResource("1_arw05")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=97345625]
+position = Vector2(23, 38.5)
+shape = SubResource("RectangleShape2D_u8vuu")
+script = ExtResource("3_f0r7w")
+
+[node name="playerupSprite" type="AnimatedSprite2D" parent="." unique_id=1336483190]
+position = Vector2(26, 38)
+scale = Vector2(2.732, 2.295)
+sprite_frames = SubResource("SpriteFrames_47eot")

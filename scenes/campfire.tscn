@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://dw0nknaptj21s"]
+
+[ext_resource type="Script" uid="uid://7tksc2h65k07" path="res://scenes/canvas_layer.gd" id="1_63vhv"]
+[ext_resource type="PackedScene" uid="uid://ckmxfs1axheih" path="res://scenes/player.tscn" id="1_m47ar"]
+[ext_resource type="Script" uid="uid://8o66vwvmkyow" path="res://scenes/scorelabel.gd" id="2_1v5ef"]
+[ext_resource type="PackedScene" uid="uid://d2m8l307fd2em" path="res://scenes/backgroungimage.tscn" id="2_54scn"]
+[ext_resource type="PackedScene" uid="uid://cxloq8cfiuam8" path="res://scenes/deadline.tscn" id="3_yfrnb"]
+[ext_resource type="PackedScene" uid="uid://1v78lhdti01a" path="res://scenes/ice.tscn" id="4_1v5ef"]
+
+[sub_resource type="Gradient" id="Gradient_1v5ef"]
+offsets = PackedFloat32Array(0.009036144, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.101960786, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_63vhv"]
+gradient = SubResource("Gradient_1v5ef")
+
+[sub_resource type="Gradient" id="Gradient_63vhv"]
+offsets = PackedFloat32Array(0.6987952, 1)
+colors = PackedColorArray(0, 0, 0.8117647, 1, 0, 0.72156864, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_w2pjx"]
+gradient = SubResource("Gradient_63vhv")
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_1v5ef"]
+
+[node name="campfire" type="Node2D" unique_id=1097842133]
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1313277211]
+layer = -1
+follow_viewport_enabled = true
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer2" unique_id=1540313844]
+offset_left = -1535.4465
+offset_top = 658.62604
+offset_right = -571.0369
+offset_bottom = 1986.4265
+rotation = -1.5736555
+scale = Vector2(1.0417567, 130.6521)
+texture = SubResource("GradientTexture1D_63vhv")
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer2" unique_id=1076326012]
+offset_left = -1567.4424
+offset_top = 1679.8477
+offset_right = -240.8739
+offset_bottom = 3024.8833
+rotation = -1.5736555
+scale = Vector2(1, 130.16881)
+texture = SubResource("GradientTexture1D_w2pjx")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1496329702]
+layer = 3
+script = ExtResource("1_63vhv")
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=1750796741]
+offset_left = 9.0
+offset_top = -6.0
+offset_right = 469.0
+offset_bottom = 72.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 57
+text = "Score:"
+script = ExtResource("2_1v5ef")
+
+[node name="Timer" type="Timer" parent="CanvasLayer" unique_id=436860571]
+
+[node name="player" parent="." unique_id=1265036037 instance=ExtResource("1_m47ar")]
+position = Vector2(-475, 346)
+
+[node name="BackgroungImage" parent="player" unique_id=58090044 instance=ExtResource("2_54scn")]
+position = Vector2(219, -198)
+
+[node name="Deadline" parent="." unique_id=2109944049 instance=ExtResource("3_yfrnb")]
+position = Vector2(64, 187)
+
+[node name="Ice" parent="." unique_id=2048730378 instance=ExtResource("4_1v5ef")]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1586246890]
+position = Vector2(0, 360)
+rotation = -3.1415927
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=141368141]
+shape = SubResource("WorldBoundaryShape2D_1v5ef")
+disabled = true
+one_way_collision = true

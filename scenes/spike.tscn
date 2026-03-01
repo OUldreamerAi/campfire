@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://cm7eafwlhbqm6"]
+
+[ext_resource type="Script" uid="uid://bie6g24lxjfk6" path="res://scripts/spike.gd" id="1_6tr4y"]
+[ext_resource type="Texture2D" uid="uid://2dwnw6qwucyb" path="res://art/spikeTop.png" id="2_wes6l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5sso0"]
+size = Vector2(18.259024, 21.5)
+
+[node name="Spike" type="Node2D" unique_id=1577594404]
+metadata/_edit_horizontal_guides_ = [-141.0]
+
+[node name="spike" type="Node2D" parent="." unique_id=1490913052]
+light_mask = 5
+visibility_layer = 5
+position = Vector2(-0.235, 0)
+scale = Vector2(2, 2)
+script = ExtResource("1_6tr4y")
+
+[node name="Sprite2D" type="Sprite2D" parent="spike" unique_id=553099254]
+position = Vector2(0.1175, -17.5)
+scale = Vector2(1, 0.62142855)
+texture = ExtResource("2_wes6l")
+
+[node name="Area2D" type="Area2D" parent="spike" unique_id=1739662426]
+collision_layer = 3
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spike/Area2D" unique_id=974424883]
+position = Vector2(0.7367301, -47.75)
+shape = SubResource("RectangleShape2D_5sso0")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="spike" unique_id=882080383]
+position = Vector2(0.1175, 0)
+scale = Vector2(0.5, 0.5)
+collision_layer = 4
+collision_mask = 5
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="spike/CharacterBody2D" unique_id=1965323982]
+position = Vector2(0, -37.375)
+scale = Vector2(1, 0.58928573)
+polygon = PackedVector2Array(0, 0, 2, 0, 26, -70, -23, -70)
+
+[connection signal="body_entered" from="spike/Area2D" to="spike" method="_on_area_2d_body_entered"]
